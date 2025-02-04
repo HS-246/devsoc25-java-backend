@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @Repository
 public interface PlantRepository extends JpaRepository<Plant, Long> {
-//    @Override
-//    Optional<Plant> findById(Long plantid);
+    @Override
+    Optional<Plant> findById(Long plantid);
     Optional<List<Plant>> findAllByUserUserid(long userid);
 }
