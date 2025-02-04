@@ -3,6 +3,7 @@ package org.example.devsoc25.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.example.devsoc25.SensorData;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -43,6 +44,13 @@ public class Plant {
                 ", light=" + light +
                 ", user=" + user.getUsername() +
                 '}';
+    }
+
+    public void setSensors(SensorData sensorData){
+        this.humidity = sensorData.getHumidity();
+        this.light= sensorData.getlightIntensity();
+        this.soil_moisture= sensorData.getsoilMoisture();
+        this.temperature= sensorData.getAmbientTemperature();
     }
 
     public Plant() {

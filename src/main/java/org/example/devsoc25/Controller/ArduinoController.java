@@ -8,7 +8,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-//@Slf4j
+import java.io.IOException;
+import java.net.URISyntaxException;
+
+@Slf4j
 @RestController
 @RequestMapping("/uno")
 public class ArduinoController {
@@ -20,11 +23,10 @@ public class ArduinoController {
 
     @PostMapping("/{plantid}/data")
     public HttpStatus logInfo(@RequestBody SensorData sensorData,
-                              @PathVariable long plantid)
-    {
+                              @PathVariable long plantid) throws IOException, URISyntaxException, InterruptedException {
         arduinoService.saveData(sensorData,plantid);
         //float type=(sensorData.getAmbient_Temperature());
-        System.out.println(plantid+" "+sensorData.toString());
+        log.info(plantid+" "+sensorData.toString());
         return HttpStatus.OK;
     }
 }

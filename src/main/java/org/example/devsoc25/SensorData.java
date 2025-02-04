@@ -62,7 +62,6 @@ public class SensorData {
     @Override
     public String toString() {
         return "SensorData{" +
-                "Species=" + species +
                 "soilMoisture=" + soilMoisture +
                 ", ambientTemperature=" + ambientTemperature +
                 ", humidity=" + humidity +
