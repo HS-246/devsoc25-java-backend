@@ -1,61 +1,72 @@
 package org.example.devsoc25;
 
+
 public class SensorData {
-    private String Species;
-    private int Soil_Moisture;
-    private int Ambient_Temperature;
-    private int Humidity;
-    private int Light_Intensity;
+
+    private String species;
+    private int soilMoisture;
+    private int ambientTemperature;
+    private int humidity;
+    private int lightIntensity;
 
     public SensorData() {
     }
 
-    public SensorData(int Soil_Moisture, int Ambient_Temperature, int Humidity, int Light_Intensity) {
-        this.Soil_Moisture = Soil_Moisture;
-        this.Ambient_Temperature = Ambient_Temperature;
-        this.Humidity = Humidity;
-        this.Light_Intensity = Light_Intensity;
+    public SensorData(String Species, int SoilMoisture, int ambientTemperature, int humidity, int LightIntensity) {
+        species = Species;
+        soilMoisture = SoilMoisture;
+        this.ambientTemperature = ambientTemperature;
+        this.humidity = humidity;
+        lightIntensity = LightIntensity;
     }
 
-    public int getSoil_Moisture() {
-        return Soil_Moisture;
+    public SensorData(int soilMoisture, int ambientTemperature, int Humidity, int lightIntensity) {
+        this.soilMoisture = soilMoisture;
+        this.ambientTemperature = ambientTemperature;
+        this.humidity = Humidity;
+        this.lightIntensity = lightIntensity;
     }
 
-    public void setSoil_Moisture(int Soil_Moisture) {
-        this.Soil_Moisture = Soil_Moisture;
+    public int getsoilMoisture() {
+        return soilMoisture;
     }
 
-    public int getAmbient_Temperature() {
-        return Ambient_Temperature;
+    public void setsoilMoisture(int soilMoisture) {
+        this.soilMoisture = soilMoisture;
     }
 
-    public void setAmbient_Temperature(int Ambient_Temperature) {
-        this.Ambient_Temperature = Ambient_Temperature;
+    public int getAmbientTemperature() {
+        return ambientTemperature;
+    }
+
+    public void setAmbientTemperature(int ambientTemperature) {
+        this.ambientTemperature = ambientTemperature;
     }
 
     public int getHumidity() {
-        return Humidity;
+        return humidity;
     }
 
     public void setHumidity(int Humidity) {
-        this.Humidity = Humidity;
+        this.humidity = Humidity;
     }
 
-    public int getLight_Intensity() {
-        return Light_Intensity;
+    public int getlightIntensity() {
+        return lightIntensity;
     }
 
-    public void setLight_Intensity(int Light_Intensity) {
-        this.Light_Intensity = Light_Intensity;
+    public void setlightIntensity(int lightIntensity) {
+        this.lightIntensity = lightIntensity;
     }
 
     @Override
     public String toString() {
         return "SensorData{" +
-                "Soil_Moisture=" + Soil_Moisture +
-                ", Ambient_Temperature=" + Ambient_Temperature +
-                ", Humidity=" + Humidity +
-                ", Light_Intensity=" + Light_Intensity +
+                "Species=" + species +
+                "soilMoisture=" + soilMoisture +
+                ", ambientTemperature=" + ambientTemperature +
+                ", humidity=" + humidity +
+                ", lightIntensity=" + lightIntensity +
                 '}';
     }
 }

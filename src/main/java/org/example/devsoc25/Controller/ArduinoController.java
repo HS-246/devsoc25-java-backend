@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@Slf4j
+//@Slf4j
 @RestController
 @RequestMapping("/uno")
 public class ArduinoController {
@@ -19,9 +19,12 @@ public class ArduinoController {
     }
 
     @PostMapping("/{plantid}/data")
-    public HttpStatus logInfo(@RequestBody SensorData sensorData, @PathVariable long plantid) {
-        //arduinoService.saveData(sensorData,plantid);
-        log.info(plantid+sensorData.toString());
+    public HttpStatus logInfo(@RequestBody SensorData sensorData,
+                              @PathVariable long plantid)
+    {
+        arduinoService.saveData(sensorData,plantid);
+        //float type=(sensorData.getAmbient_Temperature());
+        System.out.println(plantid+" "+sensorData.toString());
         return HttpStatus.OK;
     }
 }
