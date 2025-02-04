@@ -15,6 +15,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+@SuppressWarnings("ALL")
 @Slf4j
 @Service
 public class ArduinoService {
