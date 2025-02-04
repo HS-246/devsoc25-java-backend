@@ -28,6 +28,7 @@ public class ArduinoService {
     @Transactional
     public void saveData (SensorData data, long plantid) throws IOException, InterruptedException, URISyntaxException {
         Plant plant = plantRepository.findById(plantid).get();
+        data.setSpecies(plant.getName());
 
         Gson gson = new Gson();
         String jsonRequest = gson.toJson(data);

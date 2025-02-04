@@ -3,6 +3,7 @@ package org.example.devsoc25;
 
 public class SensorData {
 
+
     private String species;
     private int soilMoisture;
     private int ambientTemperature;
@@ -33,6 +34,14 @@ public class SensorData {
 
     public void setsoilMoisture(int soilMoisture) {
         this.soilMoisture = soilMoisture;
+    }
+
+    public String getSpecies() {
+        return species;
+    }
+
+    public void setSpecies(String species) {
+        this.species = species;
     }
 
     public int getAmbientTemperature() {
