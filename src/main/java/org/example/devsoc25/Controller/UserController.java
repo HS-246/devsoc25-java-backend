@@ -14,8 +14,7 @@ import java.util.logging.Logger;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-    private static final Logger log = Logger.getLogger(UserController.class.getName());
-
+    //private static final Logger log = Logger.getLogger(UserController.class.getName());
 
     private final UserService userService;
 
