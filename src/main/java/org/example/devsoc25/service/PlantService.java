@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.logging.Logger;
 
+@SuppressWarnings("ALL")
 @Service
 public class PlantService {
     private static final Logger log = Logger.getLogger(UserService.class.getName());
@@ -33,21 +34,21 @@ public class PlantService {
     public Plant savePlant(Plant plant,long userId) throws URISyntaxException, IOException, InterruptedException {
         Optional<User> user = userRepository.findById(userId);
         plant.setUser(user.get());
-
-        Gson gson = new Gson();
-        String jsonRequest = gson.toJson(plant.getImage());
-
-        HttpRequest request= HttpRequest.newBuilder()
-                .uri(new URI("${AI_URL}/image-classify"))
-                .POST(HttpRequest.BodyPublishers.ofString(jsonRequest))
-                .build();
-
-        HttpClient httpClient = HttpClient.newHttpClient();
-
-        HttpResponse<String> response=httpClient.send(request, HttpResponse.BodyHandlers.ofString());
-
-        String plantName = gson.fromJson(response.body(),String.class);
-        plant.setName(plantName);
+//
+//        Gson gson = new Gson();
+//        String jsonRequest = gson.toJson(plant.getImage());
+//
+//        HttpRequest request= HttpRequest.newBuilder()
+//                .uri(new URI("${AI_URL}/image-classify"))
+//                .POST(HttpRequest.BodyPublishers.ofString(jsonRequest))
+//                .build();
+//
+//        HttpClient httpClient = HttpClient.newHttpClient();
+//
+//        HttpResponse<String> response=httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+//
+//        String plantName = gson.fromJson(response.body(),String.class);
+//        plant.setName(plantName);
 
         return plantRepository.save(plant);
     }
