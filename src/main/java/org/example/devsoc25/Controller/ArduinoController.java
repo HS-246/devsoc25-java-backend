@@ -23,8 +23,6 @@ public class ArduinoController {
     public HttpStatus logInfo(@RequestBody SensorData sensorData,
                               @PathVariable long plantid) throws IOException, URISyntaxException, InterruptedException {
         arduinoService.saveData(sensorData,plantid);
-        //float type=(sensorData.getAmbient_Temperature());
-        log.info(plantid+" "+sensorData.toString());
         return HttpStatus.OK;
     }
 }
