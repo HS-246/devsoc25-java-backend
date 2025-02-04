@@ -25,7 +25,7 @@ public class Plant {
     private float light;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "fk_userid",nullable=false)
+    @JoinColumn(name = "userid",nullable=false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 

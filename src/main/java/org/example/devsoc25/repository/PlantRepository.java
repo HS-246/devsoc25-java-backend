@@ -10,5 +10,6 @@ import java.util.Optional;
 public interface PlantRepository extends JpaRepository<Plant, Long> {
     @Override
     Optional<Plant> findById(Long plantid);
-    Optional<Plant> findAllByfk_userid(long userid);
+
+    Optional<Plant> findAllByUserUserid(long userid);
 }
